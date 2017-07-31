@@ -1,0 +1,13 @@
+﻿<Window x:Class="SDH_Dlouha_Brtnice.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SDH_Dlouha_Brtnice"
+        mc:Ignorable="d"
+        Title="SDH Dlouha Brtnice" Height="300" Width="300" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ComboBox x:Name="portSelect" HorizontalAlignment="Left" Margin="106,90,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="106,135,0,0" VerticalAlignment="Top" Width="75" Click="btnClick"/>
+    </Grid>
+</Window>
