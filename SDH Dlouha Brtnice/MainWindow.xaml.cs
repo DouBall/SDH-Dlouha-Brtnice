@@ -41,7 +41,7 @@ namespace SDH_Dlouha_Brtnice
                 this.Close();
             }
             catch { MessageBox.Show("Zvoleny port nelze otevrit!");}
-            
+                      
         }
     }
 }
