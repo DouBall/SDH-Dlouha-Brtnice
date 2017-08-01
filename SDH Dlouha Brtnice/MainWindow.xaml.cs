@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
@@ -21,11 +22,13 @@ namespace SDH_Dlouha_Brtnice
     public partial class Main : Window
     {
         public static SerialPort sp { set; get; }
+        public static string port;
         public Main()
         {
             InitializeComponent();
             string[] ports = null;
             ports = SerialPort.GetPortNames();
+            portSelect.ItemsSource = ports;
             portSelect.SelectedIndex = 1;
         }
 
@@ -34,13 +37,19 @@ namespace SDH_Dlouha_Brtnice
             try
             {
                 sp = new SerialPort(portSelect.SelectedValue.ToString());
+                port = portSelect.SelectedValue.ToString();
                 sp.Open();
+                sp.Close();
                 MainWindow main = new MainWindow();
                 main.Owner = this;
                 main.Show();
                 this.Close();
             }
-            catch { MessageBox.Show("Zvoleny port nelze otevrit!");}
+            catch
+            {
+                MessageBox.Show("Zvoleny port nelze otevrit!");
+                log.logme(1);
+            }
                       
         }
     }

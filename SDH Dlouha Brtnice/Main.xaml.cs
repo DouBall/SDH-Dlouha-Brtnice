@@ -31,6 +31,7 @@ namespace SDH_Dlouha_Brtnice
             {
                 try
                 {
+                    
                     mes = port.ReadLine();
                     times = mes.Split(';');
                     timeLeft = times[0];
